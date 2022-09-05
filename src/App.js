@@ -7,12 +7,13 @@ function App() {
   return (
     <div>
       <div className="app-container">
-        {
-          <Header></Header>
-        }
-        
-        {
-          <ImageSwiper></ImageSwiper>
+        { 
+          <div>
+          
+            <Header></Header>
+          
+            <ImageSwiper></ImageSwiper>
+          </div>  
         }
 
       </div>
