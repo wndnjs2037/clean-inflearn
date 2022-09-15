@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './components/Header';
 import ImageSwiper from './components/ImageSwiper';
+import LoginModal from './components/LoginModal';
+import SearchComponent from './components/SearchComponent';
 
 
 function App() {
@@ -13,6 +15,10 @@ function App() {
             <Header></Header>
           
             <ImageSwiper></ImageSwiper>
+
+            <SearchComponent></SearchComponent>
+
+            <LoginModal></LoginModal>
           </div>  
         }
 
