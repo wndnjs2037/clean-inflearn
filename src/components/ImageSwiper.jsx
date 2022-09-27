@@ -5,7 +5,7 @@ import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper/core";
 import "swiper/css"
 import "swiper/css/pagination";
 
-SwiperCore.use([Pagination, Navigation]);
+SwiperCore.use([Pagination, Navigation]); //스와이퍼 사용하기 위함
 
 export default function ImageSwiper(props) {
     return ( 
@@ -31,7 +31,7 @@ export default function ImageSwiper(props) {
               
             </Swiper>
           </div>
-
+{/* 
           <div className='pagination-container'>
             <div className='container'>
             <div className='swiper-pagination-controller'>
@@ -64,7 +64,7 @@ export default function ImageSwiper(props) {
             
 
             </div>
-          </div>
+          </div>*/}
       </main>
     
     )

@@ -11,9 +11,9 @@ const User = {
 };
 
 export default function LoginModal(props) {
+
   const [email, setEmail] = useState(""); //입력받는 값을 email 값으로 사용하기 위함
   const [pw, setPw] = useState(""); //입력받는 값을 pw 값으로 사용하기 위함
-
   const [emailVaild, setEmailValid] = useState(false); //이메일 유효성 체크용
   const [pwVaild, setPwValid] = useState(false); //패스워드 유효성 체크용
   const [notAllow, setNotAllow] = useState(false); //이메일, 비밀번호 valid 체크용
@@ -64,10 +64,10 @@ export default function LoginModal(props) {
 
   return (
     <Modal>
-      <div className="background-container">
+      <div className="background-container" onClick={ () => props.setLoginModalIsSeen(false)}>
         <div className="body-container">
           <div className="modal-container">
-            <div className="closed-button">X</div>
+            <div className="closed-button" onClick={ () => props.setLoginModalIsSeen(false)}>X</div>
 
             <div className="logo">
               <img src=".\img\logo.JPG"></img>
@@ -108,7 +108,8 @@ export default function LoginModal(props) {
             </div>
 
             <div className="social-login">
-              <p className="simple-text">간편로그인 </p>
+              <br></br>
+              <p className="simple-text">&nbsp;&nbsp;간편로그인&nbsp;&nbsp;</p>
 
               <div className="social-btn">
                 <SocialLoginButton></SocialLoginButton>
@@ -129,7 +130,7 @@ const Modal = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
 
   /* display: flex; */
 
@@ -153,10 +154,13 @@ const Modal = styled.div`
     border-radius: 6px;
     z-index: 10;
 
+    transform: translateY(50%);
+
     text-align: center;
 
     .closed-button {
       text-align: right;
+      cursor: pointer;
     }
 
     .logo {
@@ -228,9 +232,15 @@ const Modal = styled.div`
         line-height: 1.5;
         display: inline-block;
         background-color: #fff;
-        bottom: -5px;
-        left: 160px;
+        bottom: 5px;
+        left: 155px;
+
       }
+
+      .social-btn{
+        margin-top: 15px;
+      }
+
     }
   }
 `;
